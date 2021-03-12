@@ -73,7 +73,9 @@ asDateTime <- function(x, us.format = NULL, time.zone = "UTC", exact = TRUE)
         x <- as.character(x)
     if (is.null(time.zone) || time.zone == "")
         time.zone <- "UTC"
-    else if (!time.zone %in% OlsonNames())
+#    else if (!time.zone %in% OlsonNames())
+    else if (!time.zone %in% Olson_Names)
+
         stop("Time zone not recognized.")
 
     if (!isNotAllNonEmptyText(x))
